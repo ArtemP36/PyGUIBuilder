@@ -85,6 +85,23 @@ def callback():
 button = PyGUIBuilder.createButton(window, "Click Me!", callback, 2, 0)
 #PyGUIBuilder.createButton(window, "text", callbackFunction, row, column)
 ```
+Here's an example of adding a combobox:
+```python
+langs = ["1", "2", "3", "4"]
+combobox = PyGUIBuilder.createComboBox(window, langs, 1, 0)
+#PyGUIBuilder.createComboBox(window, langs, row, column)
+```
+Here's an example of messagebox:
+```python
+PyGUIBuilder.showMessageBox("showinfo", "Information", "This is an info message.")
+PyGUIBuilder.showMessageBox("showwarning", "Warning", "This is a warning message.")
+PyGUIBuilder.showMessageBox("showerror", "Error", "This is an error message.")
+PyGUIBuilder.showMessageBox("askquestion", "Question", "Are you sure?")
+PyGUIBuilder.showMessageBox("askokcancel", "OK Cancel", "Do you want to continue?")
+PyGUIBuilder.showMessageBox("askyesno", "Yes No", "Do you agree?")
+PyGUIBuilder.showMessageBox("askretrycancel", "Retry Cancel", "Do you want to retry?")
+#PyGUIBuilder.showMessageBox(type, title, text)
+```
 ### Other Functions:
 Clearing text in an entry box:
 ```python
@@ -101,6 +118,11 @@ PyGUIBuilder.getText(entry)
 Destroying an element:
 ```python
 PyGUIBuilder.destroyElement(label)
+```
+Getting selection on Combobox:
+```python
+s = PyGUIBuilder.getComboBoxSelection(combobox)
+print(s)
 ```
 Running the application:
 ```python
@@ -135,7 +157,7 @@ PyGUIBuilder.run()
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## Thanks
-Thank you for using the Python GUI Library! We hope it helps you build amazing applications. If you have any questions or need further assistance, feel free to reach out to our community forums or contact panovartem690@gmail.com.
+Thank you for using the PyGUIBuilder! We hope it helps you build amazing applications. If you have any questions or need further assistance, feel free to reach out to our community forums or contact panovartem690@gmail.com.
 
 ---
-This is the first version of our library. There will be more to come! Please keep in mind that there may be bugs and flaws. We will appreciate your feedback and suggestions.
+Please keep in mind that there may be bugs and flaws. 
