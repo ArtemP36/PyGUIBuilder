@@ -60,7 +60,6 @@ To create a main application window, use the CreateWindow function:
 import PyGUIBuilder
 
 window = PyGUIBuilder.createWindow("My App", "icon.ico", 400, 400)
-#PyGUIBuilder.createWindow("title", "icon.ico", width, height)
 ```
 
 ### Adding Widgets
@@ -70,12 +69,10 @@ Widgets are the building blocks of a GUI application. You can add various widget
 Here's an example of adding a label:
 ```python
 label = PyGUIBuilder.createLabel(window, "Hello, World!", 1, 0)
-#PyGUIBuilder.createLabel(window, "text", row, column)
 ```
 Here's an example of adding a entrybox:
 ```python
 entry = PyGUIBuilder.createEntry(window, "text", 3, 0)
-#PyGUIBuilder.createEntry(window, "text", row, column)
 ```
 Here's an example of adding a button:
 ```python
@@ -83,13 +80,11 @@ def callback():
    print("Button clicked!")
 
 button = PyGUIBuilder.createButton(window, "Click Me!", callback, 2, 0)
-#PyGUIBuilder.createButton(window, "text", callbackFunction, row, column)
 ```
 Here's an example of adding a combobox:
 ```python
 langs = ["1", "2", "3", "4"]
 combobox = PyGUIBuilder.createComboBox(window, langs, 1, 0)
-#PyGUIBuilder.createComboBox(window, langs, row, column)
 ```
 Here's an example of messagebox:
 ```python
@@ -100,7 +95,10 @@ PyGUIBuilder.showMessageBox("askquestion", "Question", "Are you sure?")
 PyGUIBuilder.showMessageBox("askokcancel", "OK Cancel", "Do you want to continue?")
 PyGUIBuilder.showMessageBox("askyesno", "Yes No", "Do you agree?")
 PyGUIBuilder.showMessageBox("askretrycancel", "Retry Cancel", "Do you want to retry?")
-#PyGUIBuilder.showMessageBox(type, title, text)
+```
+Here's an example of adding a CheckBox:
+```python
+PyGUIBuilder.createCheckbox(window, "text", 1, 0)
 ```
 ### Other Functions:
 Clearing text in an entry box:
@@ -121,8 +119,7 @@ PyGUIBuilder.destroyElement(label)
 ```
 Getting selection on Combobox:
 ```python
-s = PyGUIBuilder.getComboBoxSelection(combobox)
-print(s)
+print(PyGUIBuilder.getComboBoxSelection(combobox))
 ```
 Running the application:
 ```python
