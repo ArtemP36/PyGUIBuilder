@@ -8,7 +8,7 @@ with open("LICENSE", "r") as fh:
 
 setup(
     name='PyGUIBuilder',
-    version='1.2',
+    version='1.3',
     packages=find_packages(),
     author='Artem Panov',
     author_email='panovartem690@gmail.com',
