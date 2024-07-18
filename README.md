@@ -120,6 +120,10 @@ PyGUIBuilder.destroyElement(label)
 Getting selection on Combobox:
 ```python
 print(PyGUIBuilder.getComboBoxSelection(combobox))
+Getting Checkbox state:
+```python
+PyGUIBuilder.getCheckbox()
+```
 ```
 Running the application:
 ```python
