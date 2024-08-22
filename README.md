@@ -45,10 +45,10 @@ PyGUIBuilder.run()
 ## Features
 
 - **Works on Windows**
-- **Ease of use:** The library provides a simple and intuitive interface for creating GUI elements
-- **Modern Widgets:** Buttons, labels, text entries.
-- **Flexible Layouts:** place widgets by rows and columns for flexible UI design.
-- **Event Handling:** Simple and intuitive event handling system.
+- **Ease of use:** The library provides a simple and intuitive interface for creating GUI elements.
+- **Widgets:** Buttons, labels, text entries, buttons, radio buttons and many others.
+- **Grid placement:** placing widgets in rows and columns.
+- **Alerts and Warnings:** Simple dialog boxes for messages and warnings.
 
 ## Usage
 
@@ -96,9 +96,13 @@ PyGUIBuilder.showMessageBox("askokcancel", "OK Cancel", "Do you want to continue
 PyGUIBuilder.showMessageBox("askyesno", "Yes No", "Do you agree?")
 PyGUIBuilder.showMessageBox("askretrycancel", "Retry Cancel", "Do you want to retry?")
 ```
-Here's an example of adding a CheckBox:
+Here's an example of adding a Checkbox:
 ```python
 PyGUIBuilder.createCheckbox(window, "text", 1, 0)
+```
+Here's an example of adding a RadioButton:
+```python
+PyGUIBuilder.createRadioButton(window, "text", 1, 0)
 ```
 ### Other Functions:
 Clearing text in an entry box:
@@ -125,6 +129,10 @@ Getting Checkbox state:
 ```python
 PyGUIBuilder.getCheckbox()
 ```
+Getting RadioButton state:
+```python
+PyGUIBuilder.getRadioButton()
+```
 Running the application:
 ```python
 PyGUIBuilder.run()
@@ -137,19 +145,36 @@ PyGUIBuilder.run()
 import PyGUIBuilder
 
 def on_submit():
-    print(f"Name: {PyGUIBuilder.getText(entry_name)}, Age: {PyGUIBuilder.getText(entry_age)}")
+    r = PyGUIBuilder.getCheckbox(Robot)
+    if r == 1:
+        check = "Not a robot"
+    else:
+        check = "Robot"
+    print(f"First Name: {PyGUIBuilder.getText(e_firstname)}, Last Name: {PyGUIBuilder.getText(e_lastname)}, Age: {PyGUIBuilder.getText(e_age)}, EMAIL: {PyGUIBuilder.getText(e_email)}, Phone number: {PyGUIBuilder.getText(e_phone_number)}, Password: {PyGUIBuilder.getText(e_password)}, {check}")
 
 app = PyGUIBuilder.createWindow("Simple Form", "icon.ico", 400, 400)
 
-label_name = PyGUIBuilder.createLabel(app, "Name:", 1, 0)
+l_firstname = PyGUIBuilder.createLabel(app, "First Name:", 1, 0)
+e_firstname = PyGUIBuilder.createEntry(app, "", 1, 1)
 
-entry_name = PyGUIBuilder.createEntry(app, "", 1, 1)
+l_lastname = PyGUIBuilder.createLabel(app, "Last Name:", 2, 0)
+e_lastname = PyGUIBuilder.createEntry(app, "", 2, 1)
 
-label_age = PyGUIBuilder.createLabel(app, "Age:", 2, 0)
+l_age = PyGUIBuilder.createLabel(app, "Age:", 3, 0)
+e_age = PyGUIBuilder.createEntry(app, "", 3, 1)
 
-entry_age = PyGUIBuilder.createEntry(app, "", 2, 1)
+l_email = PyGUIBuilder.createLabel(app, "EMAIL:", 4, 0)
+e_email = PyGUIBuilder.createEntry(app, "", 4, 1)
 
-submit_button = PyGUIBuilder.createButton(app, "Submit", on_submit, 3, 0)
+l_phone_number = PyGUIBuilder.createLabel(app, "Phone number:", 5, 0)
+e_phone_number = PyGUIBuilder.createEntry(app, "", 5, 1)
+
+l_password = PyGUIBuilder.createLabel(app, "Password:", 6, 0)
+e_password = PyGUIBuilder.createEntry(app, "", 6, 1)
+
+Robot = PyGUIBuilder.createCheckbox(app, "I am not a robot", 8, 0)
+
+submit_button = PyGUIBuilder.createButton(app, "Submit", on_submit, 9, 0)
 
 PyGUIBuilder.run()
 ```
@@ -158,7 +183,7 @@ PyGUIBuilder.run()
 This project is licensed under the MIT License. See [LICENSE](LICENSE) for details.
 
 ## Thanks
-Thank you for using the PyGUIBuilder! We hope it helps you build amazing applications. If you have any questions or need further assistance, feel free to reach out to our community forums or contact panovartem690@gmail.com.
+Thank you for using the PyGUIBuilder! We hope it helps you build amazing applications. If you have questions or need additional help, feel free to contact panovartem690@gmail.com.
 
 ---
-Please keep in mind that there may be bugs and flaws. 
+Please keep in mind that there may be bugs and flaws.
