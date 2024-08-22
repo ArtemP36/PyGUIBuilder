@@ -51,6 +51,12 @@ g.createCheckbox_dll.restype = c_void_p
 g.getCheckbox_dll.argtypes = [HWND]
 g.getCheckbox_dll.restype = c_void_p
 
+g.createRadioButton_dll.argtypes = [Window_t, ctypes.c_char_p, ctypes.c_int, ctypes.c_int]
+g.createRadioButton_dll.restype = ctypes.c_void_p
+
+g.getRadioButton_dll.argtypes = [HWND]
+g.getRadioButton_dll.restype = c_void_p
+
 ButtonCallback = CFUNCTYPE(None)
 
 _global_callbacks = []
@@ -122,6 +128,12 @@ def createCheckbox(window, text, row, column):
 
 def getCheckbox(hwnd):
     return g.getCheckbox_dll(hwnd)
+
+def createRadioButton(window, text, row, column):
+    return g.createRadioButton_dll(window, text.encode('utf-8'), row, column)
+
+def getRadioButton(hwnd):
+    return g.getRadioButton_dll(hwnd)
 
 def run():
     msg = ctypes.wintypes.MSG()
